@@ -18,5 +18,6 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <mapping class="com.clarivate.entity.Record" />
+        <mapping class="com.clarivate.entity.Date" />
     </session-factory>
 </hibernate-configuration>

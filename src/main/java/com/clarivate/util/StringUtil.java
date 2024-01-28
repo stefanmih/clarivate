@@ -6,7 +6,7 @@ public class StringUtil {
     public static boolean isEmpty(String original){
         if(original == null)
             return true;
-        String str = original.replaceAll("(^\\h*)|(\\h*$)","");
+        String str = original.replaceAll("(^\\h*)|(\\h*$)","").replace("\u00a0"," ");
         if(str.length() == 0)
             return true;
         for(char c : str.toCharArray()){

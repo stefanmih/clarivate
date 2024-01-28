@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a18477-bdef-424d-a9c0-f287d2e15ac7" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/entity/Record.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/util/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+    <list default="true" id="d2a18477-bdef-424d-a9c0-f287d2e15ac7" name="Changes" comment="added hibernate and db">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/entity/Date.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/util/EntityIDGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/collection/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/collection/Tuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/entity/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/entity/Record.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/main/MainModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/main/MainModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/scrapper/AustraliaHolidayScrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/scrapper/AustraliaHolidayScrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,14 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="MainModule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.clarivate.main.MainModule" />
@@ -76,7 +76,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706288354759</updated>
-      <workItem from="1706288356139" duration="20963000" />
+      <workItem from="1706288356139" duration="28208000" />
+      <workItem from="1706444992307" duration="733000" />
+      <workItem from="1706445811514" duration="6903000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1706402188933</created>
@@ -85,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706402188933</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added hibernate and db">
+      <created>1706437864474</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706437864474</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +113,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="added hibernate and db" />
+    <option name="LAST_COMMIT_MESSAGE" value="added hibernate and db" />
   </component>
 </project>
