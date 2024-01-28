@@ -8,17 +8,9 @@ import java.io.IOException;
 
 
 public class MainModule {
-    public static AustraliaHolidayScrapper scrapper;
-
-    static {
-        try {
-            scrapper = new AustraliaHolidayScrapper(HttpUtil.getSiteSource("https://www.commerce.wa.gov.au/labour-relations/public-holidays-western-australia"));
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException, InterruptedException {
+        String pageSource = HttpUtil.getSiteSource("https://www.commerce.wa.gov.au/labour-relations/public-holidays-western-australia");
+        AustraliaHolidayScrapper scrapper = new AustraliaHolidayScrapper(pageSource);
         scrapper.insertDataIntoDB();
         System.out.println(StringUtil.printRecords(scrapper.getDataFromDB()));
     }

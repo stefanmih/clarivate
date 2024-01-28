@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a18477-bdef-424d-a9c0-f287d2e15ac7" name="Changes" comment="added inserting into db">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/scrapper/WebScrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/clarivate/parser/ParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/entity/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/entity/Date.java" afterDir="false" />
+    <list default="true" id="d2a18477-bdef-424d-a9c0-f287d2e15ac7" name="Changes" comment="finalization">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/main/MainModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/main/MainModule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/scrapper/AustraliaHolidayScrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/scrapper/impl/AustraliaHolidayScrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/util/EntityIDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/util/EntityIDGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/clarivate/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/clarivate/util/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +42,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ParserTest.testInsertAndReadFromDB">
+  <component name="RunManager" selected="Application.MainModule">
     <configuration name="MainModule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.clarivate.main.MainModule" />
       <module name="WebScrapper" />
@@ -115,10 +106,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainModule" />
         <item itemvalue="JUnit.ParserTest.testInsertAndReadFromDB" />
         <item itemvalue="JUnit.ParserTest.parserTest" />
         <item itemvalue="JUnit.ParserTest.test" />
-        <item itemvalue="Application.MainModule" />
       </list>
     </recent_temporary>
   </component>
@@ -132,7 +123,7 @@
       <updated>1706288354759</updated>
       <workItem from="1706288356139" duration="28208000" />
       <workItem from="1706444992307" duration="733000" />
-      <workItem from="1706445811514" duration="14609000" />
+      <workItem from="1706445811514" duration="14925000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1706402188933</created>
@@ -155,7 +146,21 @@
       <option name="project" value="LOCAL" />
       <updated>1706452839571</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="finalization">
+      <created>1706462513248</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706462513248</updated>
+    </task>
+    <task id="LOCAL-00005" summary="finalization">
+      <created>1706462639768</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706462639768</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +181,7 @@
     <MESSAGE value="init" />
     <MESSAGE value="added hibernate and db" />
     <MESSAGE value="added inserting into db" />
-    <option name="LAST_COMMIT_MESSAGE" value="added inserting into db" />
+    <MESSAGE value="finalization" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalization" />
   </component>
 </project>
