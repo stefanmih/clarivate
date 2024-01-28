@@ -51,7 +51,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ParserTest.parserTest">
+  <component name="RunManager" selected="JUnit.ParserTest.testInsertAndReadFromDB">
     <configuration name="MainModule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.clarivate.main.MainModule" />
       <module name="WebScrapper" />
@@ -97,8 +97,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ParserTest.testInsertAndReadFromDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="WebScrapper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.clarivate.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.clarivate.parser" />
+      <option name="MAIN_CLASS_NAME" value="com.clarivate.parser.ParserTest" />
+      <option name="METHOD_NAME" value="testInsertAndReadFromDB" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParserTest.testInsertAndReadFromDB" />
         <item itemvalue="JUnit.ParserTest.parserTest" />
         <item itemvalue="JUnit.ParserTest.test" />
         <item itemvalue="Application.MainModule" />
