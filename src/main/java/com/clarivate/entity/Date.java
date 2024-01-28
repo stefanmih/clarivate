@@ -60,4 +60,10 @@ public class Date {
         this.recordId = recordId;
     }
 
+    @Override
+    public String toString() {
+        return "Date{" +
+                "date=" + date +
+                '}';
+    }
 }

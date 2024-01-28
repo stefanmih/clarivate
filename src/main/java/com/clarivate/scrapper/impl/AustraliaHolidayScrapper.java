@@ -1,33 +1,38 @@
-package com.clarivate.scrapper;
+package com.clarivate.scrapper.impl;
 
 import com.clarivate.collection.Tuple;
 import com.clarivate.entity.Date;
 import com.clarivate.entity.Record;
+import com.clarivate.scrapper.WebScrapper;
 import com.clarivate.util.EntityIDGenerator;
 import com.clarivate.util.HibernateUtil;
 import com.clarivate.util.StringUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.collection.spi.PersistentBag;
 
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class AustraliaHolidayScrapper {
+public class AustraliaHolidayScrapper implements WebScrapper {
     private final List<Integer> years = new ArrayList<>();
     private final List<String> dates = new ArrayList<>();
     private final List<String> holidays = new ArrayList<>();
 
-    //private final List<Date> datesParsed = new ArrayList<>();
-
     public AustraliaHolidayScrapper(String source) {
+        parseDataFromSource(source);
+    }
+
+    public AustraliaHolidayScrapper() {
+    }
+
+    @Override
+    public void parseDataFromSource(String source){
         getHolidayDates(source);
         getHolidayNames(source);
         getYearsFromHeader(source);
@@ -53,7 +58,7 @@ public class AustraliaHolidayScrapper {
     }
 
     private void getHolidayNames(String source) {
-        Pattern pattern = Pattern.compile("<th (.*?)><strong>(.*?)</strong></th>", Pattern.CASE_INSENSITIVE | Pattern.MULTILINE);
+        Pattern pattern = Pattern.compile("<th(.*?)><strong>(.*?)</strong></th>", Pattern.CASE_INSENSITIVE | Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(source);
         while (matcher.find()) {
             holidays.add(matcher.group(2)
@@ -64,6 +69,7 @@ public class AustraliaHolidayScrapper {
     private void getHolidayDates(String source) {
         Pattern pattern = Pattern.compile("<td>([.\\s\\S]*?)</td>", Pattern.CASE_INSENSITIVE | Pattern.MULTILINE);
         Matcher matcher = pattern.matcher(source);
+
         while (matcher.find()) {
             dates.add(matcher.group(1)
                     .replaceAll("(<br(\\s*)/>[\\n\\t]*&amp;<br(\\s*)/>[\\n\\t]*)", " & ")
@@ -72,6 +78,8 @@ public class AustraliaHolidayScrapper {
         }
     }
 
+    @Override
+    @SuppressWarnings("unchecked")
     public List<Tuple> getDataFromSource() throws Exception {
         int i = 0;
         List<Tuple> finalData = new ArrayList<>();
@@ -79,14 +87,14 @@ public class AustraliaHolidayScrapper {
             Tuple tuple = Tuple.tupleOf(String.class, ArrayList.class).createTuple(holiday, new ArrayList<>());
             finalData.add(tuple);
             for (Integer year : years) {
-                ((ArrayList)tuple.getElement(1)).addAll(parseDates(dates.get(i).trim() + " " + year));
+                ((ArrayList<Date>)tuple.getElement(1)).addAll(parseDates(dates.get(i).trim() + " " + year));
                 i++;
             }
         }
         return finalData;
     }
 
-    public List<Date> parseDates(String date) throws Exception {
+    private List<Date> parseDates(String date) throws Exception {
         List<Date> dates = new ArrayList<>();
         if (date.contains("&")) {
             int year = Integer.parseInt(date.substring(date.length() - 4));
@@ -110,6 +118,8 @@ public class AustraliaHolidayScrapper {
         return parseDate(date.trim() + " " + year);
     }
 
+    @Override
+    @SuppressWarnings("unchecked")
     public void insertDataIntoDB() {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -135,20 +145,13 @@ public class AustraliaHolidayScrapper {
         }
     }
 
-    public List<Tuple> getDataFromDB() {
+    @Override
+    public List<Record> getDataFromDB() {
         Transaction transaction = null;
-        List<Tuple> records = null;
+        List<Record> records = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            records = session.createQuery("from Record", Record.class)
-                    .stream()
-                    .map(e -> {
-                        try {
-                            return Tuple.tupleOf(String.class, PersistentBag.class).createTuple(e.getHoliday(), e.getDate());
-                        } catch (Exception ex) {
-                            throw new RuntimeException(ex);
-                        }
-                    }).toList();
+            records = session.createQuery("from Record", Record.class).stream().toList();
         } catch (Exception e) {
             e.printStackTrace();
             if (transaction != null) {

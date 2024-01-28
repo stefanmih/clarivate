@@ -1,9 +1,8 @@
 package com.clarivate.main;
 
-import com.clarivate.collection.Tuple;
-import com.clarivate.scrapper.AustraliaHolidayScrapper;
-import com.clarivate.util.HibernateUtil;
+import com.clarivate.scrapper.impl.AustraliaHolidayScrapper;
 import com.clarivate.util.HttpUtil;
+import com.clarivate.util.StringUtil;
 
 import java.io.IOException;
 
@@ -19,9 +18,9 @@ public class MainModule {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
         scrapper.insertDataIntoDB();
-        System.out.println(scrapper.getDataFromDB());
+        System.out.println(StringUtil.printRecords(scrapper.getDataFromDB()));
     }
 
 
