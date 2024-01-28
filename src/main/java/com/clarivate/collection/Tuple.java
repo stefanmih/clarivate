@@ -62,7 +62,7 @@ public class Tuple {
         for (int i = 0; i < objectList.size(); i++) {
             sb.append(objectList.get(i).toString());
             if (i < objectList.size() -1)
-                sb.append(",");
+                sb.append(", ");
         }
         sb.append(")");
         return sb.toString();
